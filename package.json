@@ -9,7 +9,7 @@
     "socket.io": "^4.4.0",
     "whatsapp-web.js": "^1.15.3"
   },
-  "name": "whatsapp-pai",
+  "name": "whatsapp-api",
   "version": "1.0.0",
   "description": "\u001b[A\u001b[A\u001b[B\u001b[Bwhatsapp api by dirgareborn",
   "main": "app.js",
