@@ -6,6 +6,8 @@ const socketIO = require('socket.io');
 const qrcode = require('qrcode');
 const http = require('http');
 const fs = require('fs');
+const favicon = require('serve-favicon');
+const path = require('path');
 const { phoneNumberFormatter} = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
 const port = process.env.PORT || 8000 ;
@@ -16,6 +18,8 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 app.use(express.json());
+app.use(favicon(path.join(__dirname,'/public/images','favicon.ico')));
+app.use('/public/css', express.static(__dirname + '/public/css'));
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({
     debug:true
