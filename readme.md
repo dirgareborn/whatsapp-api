@@ -1,27 +1,14 @@
-# whatsapp-api
-WhatsApp API Terinspirasi dari Ngekoding Yang Telah Memberikan Tutorial Lengkap dan Jelas untuk implementasi WhatsAppWeb.js .........
+# WhatsApp-api
+WhatsApp API Terinspirasi dari <a href="https://github.com/ngekoding/whatsapp-api-tutorial">Nur Muhammad</a> Yang Telah Memberikan Tutorial Lengkap dan Jelas untuk implementasi <a href="https://github.com/pedroslopez/whatsapp-web.js">whatsapp-web.js</a>
 
-##Kebutuhan Sistem
-1. Node JS Versi 10
-2. NPM Versi 6
+![Screenshot WhatsApp API](https://user-images.githubusercontent.com/21957159/148113221-efaa6ce3-c789-4d17-8818-4a2906370137.png)
 
-##Package Yang Digunakan
-1. Express JS
-2. Axios
-3. Socket IO
-4. QRCode
-5. Express-validator
-6. Express-FileUpload
-7. Http
 
-##Basic Template  
-
-##Peruntukan
-WhatsApp API ini dibuat semata-mata hanya untuk belajar dan tidak bermaksud untuk merugikan pihak whatsapp dan mitra kerjasamanya.
-
-##install 
+###install 
 1. git clone https://github.com/dirgareborn/whatsapp-api.git
 2. npm install
-3. nmp run start
+3. nmp run start  
+
+###Basic Template <a href="https://www.bootdey.com/snippets/view/Whatsapp-web-chat-template">Whatsapp web chat template</a>
 
 silahkan buka browser anda http://localhost:8000
