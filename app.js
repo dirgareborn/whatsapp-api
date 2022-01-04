@@ -9,6 +9,7 @@ const fs = require('fs');
 const { phoneNumberFormatter} = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
 const port = process.env.PORT || 8000 ;
+const axios = require('axios');
 
 const app = express();
 const server = http.createServer(app);
@@ -105,14 +106,24 @@ const checkRegisteredNumber = async function(number){
     return isRegistered;
 }
 // send media
-app.post('/send-media',(req, res)=>{
+app.post('/send-media', async (req, res)=>{
     const number = phoneNumberFormatter(req.body.number);
     const caption = req.body.caption;
-    const media = MessageMedia.fromFilePath('./image-example.png');
-    const file = req.files.file;
-    console.log(file);
-    return;
-    
+    const fileUrl = req.body.file;
+
+    // const media = new MessageMedia(file.mimetype, file.datatoString('base64', file.name));
+    // const file = req.files.file;
+    // console.log(file);
+    // return;
+
+    let mimetype;
+    const attachment = await axios.get(fileUrl, { responseType: 'arraybuffer' }).then(response => {
+        mimetype = response.headers['content-type'];
+        return response.data.toString('base64');
+    });
+
+    const media = new MessageMedia(mimetype, attachment, 'Media');
+
     client.sendMessage(number, media, { caption: caption }).then(response =>{
         res.status(200).json({
             status :true,
