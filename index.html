@@ -50,12 +50,12 @@
             $('#qrcode').attr('src', src);
         });
 
-        socket.on('ready', function(src){
-            $('#qrcode').hide('src', src);
+        socket.on('ready', function(data){
+            $('#qrcode').hide();
         });
         
-        socket.on('ready', function(src){
-            $('#qrcode').hide('src', src);
+        socket.on('ready', function(data){
+            $('#qrcode').hide();
         });
 
     });
