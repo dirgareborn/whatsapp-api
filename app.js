@@ -18,7 +18,7 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 app.use(express.json());
-app.use(favicon(path.join(__dirname,'/public/images','favicon.ico')));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use('/public/css', express.static(__dirname + '/public/css'));
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({
@@ -46,7 +46,7 @@ const client = new Client({
             '--no-zygote',
             '--single-process', // <- this one doesn't works in Windows
             '--disable-gpu'
-          ], 
+        ], 
     }, 
         session: sessionCfg });
 
