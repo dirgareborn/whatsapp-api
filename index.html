@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatsapp API</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>WhatsApp API</title>
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/preloader.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="public/js/pace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" integrity="sha512-sVSECYdnRMezwuq5uAjKQJEcu2wybeAPjU4VJQ9pCRcCY4pIpIw4YMHIOQ0CypfwHRvdSPbH++dA3O4Hihm/LQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
 
 </head>
 <body>
+    <div id="preloader">
+        <div class="p">
+            <i class="fab fa-whatsapp fa-4x icon-wa"></i>
+        </div>
+    </div>
+    <script>      
+    paceOptions = {
+        ajax: true,
+        document: true,
+        eventLag: false
+        };
+        Pace.on('done', function() {
+        $('.p').delay(500).animate({opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+        $('#preloader').delay(1500).animate({opacity:'0'}, 2000, $.bez([0.19,1,0.22,1]));
+
+        TweenMax.from(".app", 2, {
+                delay: 1.8,
+                    y: 0,
+                opacity: 0,
+                ease: Expo.easeInOut
+            })
+        });</script>
     <div class="container app">
         <!-- Content here -->
         <div class="container app-one">
@@ -34,17 +60,17 @@
                 </div>
             </div>
             </div>
-          </div>
-              <footer class="footer-app text-center">
+        </div>
+            <div class="footer-app text-center">
                 <div class="text-center p-3">
-                  <i class="fab fa-github"></i> <a class="text-dark text-bold hidden-xs" style="text-decoration: none;" href="https://github.com/dirgareborn/whatsapp-api"><small>Dirga Reborn</small> </a>
+                <i class="fab fa-github"></i> <a class="text-dark text-bold hidden-xs" style="text-decoration: none;" href="https://github.com/dirgareborn/whatsapp-api"><small>Dirga Reborn</small> </a>
                 </div>
-              </footer>
-    </div>
+            </div>
+</div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js" integrity="sha512-I9p4eOeWXGM9m5GhJYd3UDUA5Lr+Epp5e4ykWFYW9hv3jZqdR92S5p+ApMSWuMaV4E+JqILepP1G9kNer4AFGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
+<script>        
     $(document).ready(function(){
         var socket = io();
 

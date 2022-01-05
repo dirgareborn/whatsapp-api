@@ -20,6 +20,7 @@ const io = socketIO(server);
 app.use(express.json());
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use('/public/css', express.static(__dirname + '/public/css'));
+app.use('/public/js', express.static(__dirname + '/public/js'));
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({
     debug:true

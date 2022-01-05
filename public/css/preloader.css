@@ -1,84 +1,28 @@
 html,
-body,
-/* div, */
-span {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
+body {
   margin: 0;
-  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Monument Extended";
+  /* background: #e3e3e3; */
+}
+
+h1 {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #101010;
 }
 
 body {
-  background: url("https://www.bootdey.com/img/bgy.png") no-repeat fixed center;
-  background-size: cover;
+  margin: 0px;
+  padding: 0px;
 }
-.list-item {
-  padding-left: 60px;
+.icon-wa {
+  color: #1b1b1b;
 }
-.fa-2x {
-  font-size: 1.5em;
-}
-
-.app {
-  position: relative;
-  overflow: hidden;
-  top: 50px;
-  height: calc(90% - 38px);
-  margin: auto;
-  padding: 0;
-  z-index: -1;
-  /* box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2); */
-}
-
-.app-one {
-  background-color: #f7f7f7;
-  height: 90%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  /* box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2); */
-}
-
-.text-list {
-  /* background-color: #f7f7f7; */
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  z-index: 999;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.footer-app {
-  background-color: #f7f7f7;
-  height: 10%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (max-width: 700px) {
-  .app {
-    top: 0;
-    height: 100%;
-  }
-  .heading {
-    height: 70px;
-    background-color: #009688;
-  }
-  .fa-2x {
-    font-size: 2.3em !important;
-  }
-
-  .help small {
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-  }
-}
-
 /* Pace  */
 .pace {
   pointer-events: none;
